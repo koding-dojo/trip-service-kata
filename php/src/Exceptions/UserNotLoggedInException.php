@@ -1,6 +1,6 @@
 <?php
 
-namespace TripServiceKata\Exception;
+namespace App\Exceptions;
 
 use Exception;
 

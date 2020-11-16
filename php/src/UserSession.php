@@ -1,20 +1,15 @@
 <?php
 
-namespace TripServiceKata\User;
+namespace App;
 
-use TripServiceKata\Exception\DependentClassCalledDuringUnitTestException;
+use App\Models\User;
+use App\Exceptions\DependentClassCalledDuringUnitTestException;
 
 class UserSession
 {
-    /**
-     * @var UserSession
-     */
-    private static $userSession;
+    private static UserSession $userSession;
 
-    /**
-     * @return UserSession
-     */
-    public static function getInstance()
+    public static function getInstance(): UserSession
     {
         if (null === static::$userSession) {
             static::$userSession = new UserSession();
@@ -23,14 +18,14 @@ class UserSession
         return static::$userSession;
     }
 
-    public function isUserLoggedIn(User $user)
+    public function isUserLoggedIn(User $user): bool
     {
         throw new DependentClassCalledDuringUnitTestException(
             'UserSession.isUserLoggedIn() should not be called in an unit test'
         );
     }
 
-    public function getLoggedUser()
+    public function getLoggedUser(): User
     {
         throw new DependentClassCalledDuringUnitTestException(
             'UserSession.getLoggedUser() should not be called in an unit test'
