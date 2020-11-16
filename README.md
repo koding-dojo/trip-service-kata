@@ -3,10 +3,18 @@ Trip Service Kata
 
 Kata for legacy code hands-on session. The objective is to test and refactor the legacy TripService class.
 
-The end result should be well-crafted code that express the domain.
+This kata is originally introduced by [Sandro Mancuso](https://github.com/sandromancuso). I've just taken the PHP version and restructure it to get more idiomatic.
 
-You can watch the video with my solution. Although quite long, I explain my whole thought process while writting tests, how I break dependencies, the reasons for refactoring and re-desining the code (tests and production code), and why certain steps are important. I also cover how often I commit and why I do it. 
+# Getting Started
 
-The video is full of tips and tricks that can be used in any language.
+In order to perform the kata, first of all you will need to install all of the dependencies. This can be done using
+composer:
 
-https://www.youtube.com/watch?v=_NnElPO5BU0
+```shell
+wget http://getcomposer.org/composer.phar
+php composer.phar install
+```
+
+Next, to execute the unit tests you need run this:
+
+    vendor/bin/phpunit
